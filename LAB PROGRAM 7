@@ -1,0 +1,10 @@
+pencils <- c(9, 25, 23, 12, 11, 6, 7, 8, 9, 10)
+
+get_mode <- function(x) {
+  t <- table(x)
+  as.numeric(names(t)[t == max(t)])
+}
+
+cat("Mean =", mean(pencils), "\n")
+cat("Median =", median(pencils), "\n")
+cat("Mode =", get_mode(pencils), "\n")
