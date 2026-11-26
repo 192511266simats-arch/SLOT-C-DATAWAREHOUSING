@@ -1,0 +1,11 @@
+scores <- c(15,18,20,22,24,25,27,28,30,80)
+
+boxplot(scores,
+        main="Tennis Player Scores",
+        ylab="Points",
+        col="orange")
+
+outliers <- boxplot.stats(scores)$out
+
+print("Outliers:")
+print(outliers)
