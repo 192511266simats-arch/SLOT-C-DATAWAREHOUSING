@@ -1,0 +1,14 @@
+data(mtcars)
+
+matplot(mtcars[,c("mpg","qsec")],
+        type="l",
+        lty=1,
+        col=c("blue","red"),
+        xlab="Car Index",
+        ylab="Values",
+        main="Multiple Line Chart")
+
+legend("topright",
+       legend=c("MPG","QSEC"),
+       col=c("blue","red"),
+       lty=1)
