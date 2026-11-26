@@ -1,0 +1,21 @@
+# Given values
+age <- 35
+min_age <- 18
+max_age <- 70
+mean_age <- 35
+sd_age <- 12.94
+
+# Min-Max Normalization
+min_max <- (age - min_age) / (max_age - min_age)
+
+cat("Min-Max Normalization:", min_max, "\n")
+
+# Z-Score Normalization
+z_score <- (age - mean_age) / sd_age
+
+cat("Z-Score Normalization:", z_score, "\n")
+
+# Decimal Scaling Normalization
+decimal_scaling <- age / (10^2)
+
+cat("Decimal Scaling Normalization:", decimal_scaling, "\n")
