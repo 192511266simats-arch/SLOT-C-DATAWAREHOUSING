@@ -1,0 +1,29 @@
+x <- sort(c(1,1,5,5,5,5,5,8,8,8,
+            10,10,10,10,12,14,14,14,
+            15,15,15,15,15,15,
+            18,18,18,18,18,18,
+            20,20,20,20,20,20,20,
+            21,21,21,21,25,25,25,25,25,
+            28,28,30,50))
+
+bins <- split(x, ceiling(seq_along(x)/3))
+
+print(bins)
+
+bin_means <- lapply(bins, function(b) {
+  rep(mean(b), length(b))
+})
+
+bin_boundary <- lapply(bins, function(b) {
+  ifelse(abs(b-min(b)) <= abs(b-max(b)),
+         min(b), max(b))
+})
+
+print(bin_means)
+print(bin_boundary)
+
+hist(x, main="Price Distribution",
+     xlab="Price", col="skyblue")
+
+barplot(lengths(bins), main="Equal Frequency Bins",
+        xlab="Bin", ylab="Frequency")
