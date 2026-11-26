@@ -1,0 +1,39 @@
+# Enter the 18 age and body fat values
+age <- c()
+fat <- c()
+
+# Mean, Median and Standard Deviation
+if(length(age) == 18 && length(fat) == 18) {
+
+  cat("Age Mean:", mean(age), "\n")
+  cat("Age Median:", median(age), "\n")
+  cat("Age SD:", sd(age), "\n")
+
+  cat("Body Fat Mean:", mean(fat), "\n")
+  cat("Body Fat Median:", median(fat), "\n")
+  cat("Body Fat SD:", sd(fat), "\n")
+
+  # Boxplots
+  par(mfrow=c(1,2))
+  boxplot(age, main="Age Boxplot", col="blue")
+  boxplot(fat, main="Body Fat Boxplot", col="green")
+
+  # Scatter Plot
+  plot(age, fat,
+       main="Age vs Body Fat",
+       xlab="Age",
+       ylab="Body Fat",
+       col="red",
+       pch=19)
+
+  # Q-Q Plots
+  par(mfrow=c(1,2))
+  qqnorm(age, main="Age Q-Q Plot")
+  qqline(age, col="red")
+
+  qqnorm(fat, main="Body Fat Q-Q Plot")
+  qqline(fat, col="blue")
+
+} else {
+  cat("Please enter 18 age and 18 body fat values")
+}
